@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <h1 class="title">
+    <h1>
       ラーメンを購入
     </h1>
 
@@ -8,7 +8,8 @@
     <div @click="getItem()">
       <button>購入する</button>
     </div>
-    <p>のこりPT: 〇〇</p>
+    <p>のこり{{ $store.state.counter }} マシマシ</p>
+    <p>10マシマシ消費します</p>
 
     <div class="result" v-if="result" @click="closeResult()">
       <h1>GET</h1>
@@ -36,9 +37,8 @@
       self.result = false
     },
     getItem: function() {
-        console.log(self)
         self = this
-        fetch('https://api.myjson.com/bins/14b84y')
+        fetch('https://api.myjson.com/bins/d3xia')
           .then(data => data.json())
           .then(data => {
             const ramen = data[Math.floor(Math.random() * data.length)]
@@ -47,6 +47,9 @@
             self.name = ramen.name
             self.ramen = ramen
             self.result = true
+
+            self.$store.commit('decrement')
+            self.$store.commit('addCollection', ramen)
           })
       }
   }

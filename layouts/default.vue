@@ -4,6 +4,7 @@
      <div class="header">
     <nuxt-link to="/" exact>Home</nuxt-link>
     <nuxt-link to="/charge">About</nuxt-link>
+    <nuxt-link to="/gacha">ガチャ</nuxt-link>
   </div>
   </div>
 </template>
