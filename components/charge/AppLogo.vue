@@ -1,11 +1,11 @@
 <template>
   <div class="ChargeView">
     <div class="display">
-      {{count}}
+      {{ $store.state.counter }}
     </div>
       <div class="mashi-01 mashi">ﾏｼﾏｼ...</div>
       <div class="mashi-02 mashi">ﾏｼﾏｼ...</div>
-      <div v-on:click="incliment()">
+      <div v-on:click="$store.commit('increment')">
         <img class="charge-image" src="~assets/image.jpg">
       </div>
       <div class="mashi-03 mashi">ﾏｼﾏｼ...</div>
@@ -16,6 +16,7 @@
 
 <script>
 export default {
+
   data () {
     return {
       count: 0

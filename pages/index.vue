@@ -3,7 +3,7 @@
     <div>
       <app-logo/>
       <h1 class="title">
-        nuxt_sample
+        {{$store.state.counter}}
       </h1>
       <h2 class="subtitle">
         Nuxt.js project
@@ -28,6 +28,9 @@ import AppLogo from '~/components/AppLogo.vue'
 export default {
   components: {
     AppLogo
+  },
+  fetch({ store }) {
+    store.commit('increment')
   }
 }
 </script>
