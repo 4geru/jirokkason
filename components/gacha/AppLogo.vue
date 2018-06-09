@@ -8,8 +8,9 @@
     <div @click="getItem()">
       <button>購入する</button>
     </div>
+    <p>のこりPT: 〇〇</p>
 
-    <div class="result" v-if="result">
+    <div class="result" v-if="result" @click="closeResult()">
       <h1>GET</h1>
       <div class="result-item">
         <p class="name">{{ramen["name"]}}</p>
@@ -31,6 +32,9 @@
     }
   },
   methods: {
+    closeResult: function() {
+      self.result = false
+    },
     getItem: function() {
         console.log(self)
         self = this
