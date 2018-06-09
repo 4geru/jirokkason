@@ -1,10 +1,9 @@
 <template>
   <div class="container">
     <ul>
-      <li v-for="{id, name, menu, img} in $store.state.collection" :key="id" class="item">
-        <p>{{name}}</p>
-        <p>{{menu}}</p>
+      <li v-for="{id, name, menu, img, ref} in $store.state.collection" :key="id" class="item">
         <img v-bind:src="img"/>
+        <p><a v-bind:href="ref">{{name}} / {{menu}}</a></p>
       </li>
     </ul>
   </div>
