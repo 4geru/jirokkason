@@ -5,6 +5,7 @@
     <nuxt-link to="/" exact>Home</nuxt-link>
     <nuxt-link to="/charge">チャー二郎</nuxt-link>
     <nuxt-link to="/gacha">ガチャする</nuxt-link>
+    <nuxt-link to="/collection">ジロコレ</nuxt-link>
   </div>
   </div>
 </template>

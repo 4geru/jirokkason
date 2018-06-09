@@ -16,6 +16,7 @@
       <div class="result-item">
         <p class="name">{{ramen["name"]}}</p>
         <p class="menu">{{ramen["menu"]}}</p>
+        <img v-bind:src="ramen['img']"/>
       </div>
     </div>
   </div>
