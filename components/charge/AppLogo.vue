@@ -1,16 +1,16 @@
 <template>
   <div class="ChargeView">
-    <div class="display">
-      {{ $store.state.counter }} マシ
+    <div class="display-count">
+      {{ $store.state.counter }} ﾏｼﾏｼ
     </div>
     <div class="mashi-01 mashi">ﾏｼﾏｼ...</div>
     <div class="mashi-02 mashi">ﾏｼﾏｼ...</div>
-    <div v-on:click="$store.commit('increment')">
+    <div v-on:click="$store.commit('increment'), incliment()">
       <img class="charge-image" src="~assets/image.jpg">
     </div>
     <div class="mashi-03 mashi">ﾏｼﾏｼ...</div>
     <div class="mashi-04 mashi">ﾏｼﾏｼ...</div>
-    <div class="usageDiscription">ラーメンをタップしてマシマシになろう！！！</div>
+    <p class="usageDiscription">ラーメンをタップしてマシマシになろう！！！</p>
   </div>
 </template>
 
@@ -27,6 +27,8 @@ export default {
       self = this
       const image = document.getElementsByClassName('charge-image')[0]
       image.classList.add("charge-image-up")
+      const counter = document.getElementsByClassName('display-count')[0]
+      counter.classList.add("display-count-up")
       const mashis = document.getElementsByClassName('mashi')
       const word = mashis[self.getRandomInt(mashis.length)]
       word.style.display="block"
@@ -34,6 +36,7 @@ export default {
 
       setTimeout(function(){
         image.classList.remove("charge-image-up")
+        counter.classList.remove("display-count-up")
       }, 1);
       setTimeout(function(){
         word.style.display="none"
@@ -61,8 +64,8 @@ img{
   right: 200px;
 }
 .usageDiscription{
-  position: absolute;
-  bottom: 120px;
+  position: relative;
+  bottom: -50px;
 }
 .charge-image-up{
   top:-10px;
@@ -90,6 +93,12 @@ img{
   display: none;
   font-size: 20px;
   float: left;
+}
+.display-count{
+  font-size: 40px;
+}
+.display-count-up{
+  color: red;
 }
 </style>
 <!-- end animation style -->
