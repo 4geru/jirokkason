@@ -94,7 +94,11 @@ ul {
 }
 
 .result-item {
-  margin-top: 10px;
+  margin-top: 30px;
+}
+
+.result-item img {
+  height: 100px;
 }
 
 .vending img{

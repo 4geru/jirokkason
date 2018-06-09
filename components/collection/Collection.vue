@@ -24,3 +24,9 @@
   }
 }
 </script>
+
+<style>
+.item img {
+  height: 100px;
+}
+</style>
