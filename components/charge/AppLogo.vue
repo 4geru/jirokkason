@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style>
-img{
+.charge-image{
   z-index: -2;
   width: 250px;
 }
