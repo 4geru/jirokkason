@@ -1,0 +1,91 @@
+<template>
+  <div class="main">
+    <h1 class="title">
+      ラーメンを購入
+    </h1>
+
+    <img class="vending" src="/ticket_vending_machine.jpg" />
+    <div @click="getItem()">
+      <button>購入する</button>
+    </div>
+
+    <div class="result" v-if="result">
+      <h1>GET</h1>
+      <div class="result-item">
+        <p class="name">{{ramen["name"]}}</p>
+        <p class="menu">{{ramen["menu"]}}</p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+  data () {
+    return {
+      ramen: {
+        name: null,
+        menu: null
+      },
+      result: false
+    }
+  },
+  methods: {
+    getItem: function() {
+        console.log(self)
+        self = this
+        fetch('https://api.myjson.com/bins/14b84y')
+          .then(data => data.json())
+          .then(data => {
+            const ramen = data[Math.floor(Math.random() * data.length)]
+            ramen.menu = 'ラーメン'
+            console.log(ramen)
+            self.name = ramen.name
+            self.ramen = ramen
+            self.result = true
+          })
+      }
+  }
+}
+</script>
+
+<style>
+.main {
+  padding: 10px;
+  text-align: center;
+  position: relative;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background: rgba(255, 255, 0);
+}
+
+.result {
+  top: 0px;
+  left: 0ppx;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.8);
+  justify-content: center;
+
+  color: rgba(200, 200, 200, 1);
+}
+
+.result h1{
+ font-size: 40pt;
+}
+
+.result-item {
+  margin-top: 10px;
+}
+
+.vending {
+  margin: 30px;
+  width: 70%;
+}
+</style>
