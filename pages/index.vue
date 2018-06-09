@@ -6,7 +6,7 @@
         {{$store.state.counter}}
       </h1>
       <h2 class="subtitle">
-        Nuxt.js project
+        コレクション数: {{$store.state.collection.length}}
       </h2>
       <div class="links">
         <a
