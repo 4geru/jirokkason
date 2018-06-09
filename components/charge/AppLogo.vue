@@ -5,7 +5,7 @@
     </div>
       <div class="mashi-01 mashi">ﾏｼﾏｼ...</div>
       <div class="mashi-02 mashi">ﾏｼﾏｼ...</div>
-      <div v-on:click="$store.commit('increment')">
+      <div v-on:click="$store.commit('increment'), incliment()">
         <img class="charge-image" src="~assets/image.jpg">
       </div>
       <div class="mashi-03 mashi">ﾏｼﾏｼ...</div>
