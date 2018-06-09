@@ -23,7 +23,7 @@ export default {
     }
   },
   methods: {
-    incliment: function (event) {      
+    incliment: function (event) {
       self = this
       const image = document.getElementsByClassName('charge-image')[0]
       image.classList.add("charge-image-up")
@@ -33,12 +33,12 @@ export default {
       self.count += 1
 
       setTimeout(function(){
-        image.classList.remove("charge-image-up")    
+        image.classList.remove("charge-image-up")
       }, 1);
       setTimeout(function(){
         word.style.display="none"
       }, 100);
-    }, 
+    },
     getRandomInt(max) {
       return Math.floor(Math.random() * Math.floor(max));
     }
