@@ -1,13 +1,13 @@
 <template>
-  <result />
+  <app-logo />
 </template>
 
 <script>
-import Result from '~/components/gacha/Result.vue'
+import AppLogo from '~/components/gacha/AppLogo.vue'
 
 export default {
   components: {
-    Result
+    AppLogo
   }
 }
 </script>
