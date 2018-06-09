@@ -1,20 +1,22 @@
 <template>
   <div class="ChargeView">
-    <div>
-      {{count}}
+    <div class="display">
+      {{ $store.state.counter }}
     </div>
-    <div class="charge-image" v-on:click="incliment()">
       <div class="mashi-01 mashi">ﾏｼﾏｼ...</div>
       <div class="mashi-02 mashi">ﾏｼﾏｼ...</div>
-      <img src="~assets/image.jpg">
+      <div v-on:click="$store.commit('increment')">
+        <img class="charge-image" src="~assets/image.jpg">
+      </div>
       <div class="mashi-03 mashi">ﾏｼﾏｼ...</div>
       <div class="mashi-04 mashi">ﾏｼﾏｼ...</div>
     </div>
-  </div>
+
 </template>
 
 <script>
 export default {
+
   data () {
     return {
       count: 0
@@ -46,7 +48,8 @@ export default {
 
 <style>
 img{
-  width: 100px;
+  z-index: -2;
+  width: 250px;
 }
 </style>
 
@@ -57,28 +60,27 @@ img{
 }
 .charge-image{
   position:relative;
-  width:180px;
 }
 .mashi-01{
   position:absolute;
-  left:10px;
+  left:30px;
 }
 .mashi-02{
   position:absolute;
-  left:120px;
+  right:30px;
 }
 .mashi-03{
   position:absolute;
-  bottom:0px;
-  left:10px;
+  left:30px;
 }
 .mashi-04{
   position:absolute;
-  bottom:0px;
-  left:120px;
+  right:30px;
 }
 .mashi {
   display: none;
+  font-size: 20px;
+  float: left;
 }
 </style>
 <!-- end animation style -->
