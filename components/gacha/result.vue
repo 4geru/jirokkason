@@ -1,31 +1,44 @@
 <template>
-  <div>
-    <img class="vending" src="/ticket_vending_machine.jpg" />
-    <button @click="getItem()">購入する</button>
+  <section class="container">
+    <div>
+      <h1 class="title">
+        ラーメンを購入
+      </h1>
 
-    <div class="result">
-      <ul>
-        <li class="name">{{name}}</li>
-        <li class="menu">{{menu}}</li>
-      </ul>
+      <img class="vending" src="/ticket_vending_machine.jpg" />
+      <button @click="getItem()">購入する</button>
+   
+      <div class="result">
+        <ul>
+          <li class="name">{{ramen["name"]}}</li>
+          <li class="menu">{{ramen["menu"]}}</li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
   export default {
     data () {
       return {
-        name: 'hoge',
-        menu: 'fuga'
+        ramen: {
+          name: null,
+          menu: null
+        }
       }
     },
     methods: {
       getItem: () => {
         self = this
-        self.name = 'foo'
-        self.menu = 'bar'
-
+        fetch('https://api.myjson.com/bins/14b84y')
+          .then(data => data.json())
+          .then(data => {
+            const ramen = data[Math.floor(Math.random() * data.length)]
+            ramen.menu = 'ラーメン'
+            console.log(ramen)
+            self.ramen = ramen
+          })
       }
     }
   }

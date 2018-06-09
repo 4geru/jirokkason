@@ -1,13 +1,5 @@
 <template>
-  <section class="container">
-    <div>
-      <h1 class="title">
-        ラーメンを購入
-      </h1>
-    </div>
-
-    <result />
-  </section>
+  <result />
 </template>
 
 <script>
@@ -19,3 +11,10 @@ export default {
   }
 }
 </script>
+
+
+<style>
+ .containner {
+   text-align: center;
+ }
+</style>
