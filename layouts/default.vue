@@ -3,8 +3,8 @@
     <nuxt/>
      <div class="header">
     <nuxt-link to="/" exact>Home</nuxt-link>
-    <nuxt-link to="/charge">About</nuxt-link>
-    <nuxt-link to="/gacha">ガチャ</nuxt-link>
+    <nuxt-link to="/charge">チャー二郎</nuxt-link>
+    <nuxt-link to="/gacha">ガチャする</nuxt-link>
     <nuxt-link to="/collection">ジロコレ</nuxt-link>
   </div>
   </div>
@@ -66,6 +66,7 @@ html {
 }
 .header {
   display: flex;
+  justify-content: center;
   margin-bottom: 20px;
 }
 a {

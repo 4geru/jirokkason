@@ -6,7 +6,7 @@
 
     <img class="vending" src="/ticket_vending_machine.jpg" />
     <div @click="getItem()">
-      <button>購入する</button>
+      <img src="~assets/purchase.png" alt="">
     </div>
     <p>のこり{{ $store.state.counter }} マシマシ</p>
     <p>10マシマシ消費します</p>
@@ -94,6 +94,7 @@ button {
 
 .vending {
   margin: 30px;
-  width: 70%;
+  height: 60%;
+  width: auto;
 }
 </style>

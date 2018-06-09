@@ -1,17 +1,17 @@
 <template>
   <div class="ChargeView">
     <div class="display">
-      {{ $store.state.counter }}
+      {{ $store.state.counter }} マシ
     </div>
-      <div class="mashi-01 mashi">ﾏｼﾏｼ...</div>
-      <div class="mashi-02 mashi">ﾏｼﾏｼ...</div>
-      <div v-on:click="$store.commit('increment'), incliment()">
-        <img class="charge-image" src="~assets/image.jpg">
-      </div>
-      <div class="mashi-03 mashi">ﾏｼﾏｼ...</div>
-      <div class="mashi-04 mashi">ﾏｼﾏｼ...</div>
+    <div class="mashi-01 mashi">ﾏｼﾏｼ...</div>
+    <div class="mashi-02 mashi">ﾏｼﾏｼ...</div>
+    <div v-on:click="$store.commit('increment')">
+      <img class="charge-image" src="~assets/image.jpg">
     </div>
-
+    <div class="mashi-03 mashi">ﾏｼﾏｼ...</div>
+    <div class="mashi-04 mashi">ﾏｼﾏｼ...</div>
+    <div class="usageDiscription">ラーメンをタップしてマシマシになろう！！！</div>
+  </div>
 </template>
 
 <script>
@@ -55,6 +55,15 @@ img{
 
 <!-- begin animation style -->
 <style>
+.display{
+  position: absolute;
+  top:100px;
+  right: 200px;
+}
+.usageDiscription{
+  position: absolute;
+  bottom: 120px;
+}
 .charge-image-up{
   top:-10px;
 }
