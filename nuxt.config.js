@@ -34,5 +34,22 @@ module.exports = {
         })
       }
     }
+  },
+  modules: [
+    '@nuxtjs/pwa'
+  ],
+  manifest: {
+    name: 'ジロッカー',
+    lang: 'ja',
+    short_name: 'jirocker',
+    title: 'ジロッカー',
+    'og:title': 'ジロッカー',
+    description: 'ジロッカー',
+    'og:description': 'ジロッカーでポチポチガチャガチャ',
+    theme_color: '#ffff00',
+    background_color: '#ffffff'
+  },
+  workbox: {
+    dev: true //開発環境でもPWA
   }
 }
