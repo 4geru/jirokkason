@@ -28,9 +28,6 @@ import AppLogo from '~/components/AppLogo.vue'
 export default {
   components: {
     AppLogo
-  },
-  fetch({ store }) {
-    store.commit('increment')
   }
 }
 </script>
